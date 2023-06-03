@@ -1,0 +1,30 @@
+SELECT 
+membros.id,
+cargo.nome as cargoNome,
+membros.estado,
+pessoa.`Nome`,
+pessoa.`pai`,
+pessoa.`mae`,
+pessoa.`genero`, 
+pessoa.`dataNasc`,
+pessoa.`tipoSaguinio`,
+pessoa.`foto`,
+pessoa.`naturalidade`,
+pessoa.`estadoCivil`,
+pessoa.`residecia`,
+pessoa.`estado_BT`,
+baptismo.congregacao,
+baptismo.livroN,
+baptismo.RegistoN,
+baptismo.pastor,
+bi.Numero,
+bi.passado_em
+
+
+FROM membros
+
+INNER JOIN pessoa on (membros.id_pessoa=pessoa.id)
+INNER JOIN bi on (membros.id_BI=bi.id)
+INNER JOIN baptismo on (membros.id_Baptismo=baptismo.id)
+INNER JOIN cargo on (membros.idCargo=cargo.id)
+
